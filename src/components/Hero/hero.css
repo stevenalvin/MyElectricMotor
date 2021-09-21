@@ -1,0 +1,12 @@
+.hero {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding-bottom: 3em;
+}
+
+.heroBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
