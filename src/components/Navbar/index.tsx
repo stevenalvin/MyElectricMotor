@@ -1,17 +1,25 @@
 import React from "react";
-import "./index.css";
+import "./navbar.css";
+import { Link, NavLink } from "react-router-dom";
+
 const Navbar = () => {
   const product = [
-    { title: "MotorX" },
-    { title: "MotorY" },
-    { title: "MotorZ" },
+    { title: "MotorX", path: "/MotorX" },
+    { title: "MotorY", path: "/MotorY" },
+    { title: "MotorZ", path: "/MotorZ" },
   ];
   const menus = [{ title: "Shop" }, { title: "About" }];
   const navigation = () => {
     return (
       <ul>
         {product.map((link) => {
-          return <li className="nav-model">{link.title}</li>;
+          return (
+            <li className="nav-model">
+              <NavLink to={link.path} activeClassName="active-link">
+                {link.title}
+              </NavLink>
+            </li>
+          );
         })}
       </ul>
     );
@@ -28,7 +36,9 @@ const Navbar = () => {
 
   return (
     <nav className="nav-wrapper">
-      <div className="logo">MyElectric</div>
+      <div className="logo">
+        <Link to="/">MyElectric</Link>
+      </div>
       <div className="navigation">{navigation()}</div>
       <div className="menu-wrapper">{menu()}</div>
     </nav>

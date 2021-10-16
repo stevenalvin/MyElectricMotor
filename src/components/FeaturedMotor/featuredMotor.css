@@ -1,0 +1,48 @@
+.featured-motor-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 3000px;
+  width: 100%;
+  min-height: 750px;
+}
+
+.featured-motor {
+  flex-grow: 1;
+}
+
+.overlay {
+  position: relative;
+  /* top: 20em; */
+  height: 100%;
+  z-index: 1;
+  transition: var(--mainTransition);
+}
+.featured-motor-title {
+  position: relative;
+  text-align: center;
+  padding-top: 1.5rem;
+  font-size: 2.7rem;
+  color: var(--mainWhite);
+  transition: var(--mainTransition);
+}
+
+.featured-motor:hover .overlay {
+  background-color: rgb(0, 0, 0, 0.7);
+}
+
+.motor-link {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  transition: var(--mainTransition);
+}
+.featured-motor:hover .motor-link {
+  display: block;
+}
+
+.featured-motor:hover .featured-motor-title {
+  opacity: 0;
+}
